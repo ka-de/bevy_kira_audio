@@ -3,9 +3,9 @@ name = "bevy_kira_audio"
 version = "0.19.0"
 authors = ["Niklas Eicker <hello@nikl.me>"]
 edition = "2021"
-license = "MIT OR Apache-2.0"
+license = "MIT"
 description = "Bevy plugin for dynamic audio"
-repository = "https://github.com/NiklasEi/bevy_kira_audio"
+repository = "https://github.com/ka-de/bevy_kira_audio"
 homepage = "https://github.com/NiklasEi/bevy_kira_audio"
 documentation = "https://docs.rs/bevy_kira_audio"
 keywords = ["bevy", "gamedev", "audio", "music"]
@@ -14,7 +14,7 @@ readme = "./README.md"
 rust-version = "1.67"
 
 [features]
-default = ["ogg"]
+default = ["ogg", "settings_loader"]
 flac = ["kira/flac"]
 mp3 = ["kira/mp3"]
 ogg = ["kira/ogg"]
@@ -22,7 +22,9 @@ wav = ["kira/wav"]
 settings_loader = ["dep:ron", "dep:serde", "kira/serde"]
 
 [dependencies]
-bevy = { version = "0.13", default-features = false, features = ["bevy_asset"] }
+bevy = { version = "0.13.2", default-features = false, features = [
+  "bevy_asset",
+] }
 anyhow = "1.0"
 uuid = { version = "1", features = ["fast-rng"] }
 kira = { version = "0.8", default-features = false, features = ["cpal"] }
@@ -35,21 +37,21 @@ thiserror = "1.0"
 version = "0.13"
 default-features = false
 features = [
-    "bevy_asset",
-    "bevy_winit",
-    "bevy_render",
-    "x11",
-    "bevy_ui",
-    "bevy_text",
-    "bevy_core_pipeline",
-    "bevy_sprite",
-    "bevy_gltf",
-    "bevy_scene",
-    "bevy_pbr",
-    "tonemapping_luts",
-    "ktx2",
-    "zstd",
-    "multi-threaded",
+  "bevy_asset",
+  "bevy_winit",
+  "bevy_render",
+  "x11",
+  "bevy_ui",
+  "bevy_text",
+  "bevy_core_pipeline",
+  "bevy_sprite",
+  "bevy_gltf",
+  "bevy_scene",
+  "bevy_pbr",
+  "tonemapping_luts",
+  "ktx2",
+  "zstd",
+  "multi-threaded",
 ]
 
 [[example]]
